@@ -57,92 +57,214 @@
  *
  * TEMPLATE LITERALS
  */
-const name = 'Jared';
-const age = 35;
-const job = 'Web Developer';
-const city = 'Spokane';
-let html;
+// const name = 'Jared';
+// const age = 35;
+// const job = 'Web Developer';
+// const city = 'Spokane';
+// let html;
 
-html = `<ul style = 'list-style:none;'>
-    <li>Name: ${name}</li>
-    <li>age: ${age}</li>
-    <li>job: ${job}</li>
-    <li>city: ${city}</li>
-</ul>
-`;
+// html = `<ul style = 'list-style:none;'>
+//     <li>Name: ${name}</li>
+//     <li>age: ${age}</li>
+//     <li>job: ${job}</li>
+//     <li>city: ${city}</li>
+// </ul>
+// `;
 
-document.body.innerHTML = html;
+// document.body.innerHTML = html;
+
+// /***
+//  * Arrays and Array Methods
+//  */
+
+// // Create arrays
+// const numbers = [23, 4, 234, 23, 45, 6, 54, 65, 5];
+// const numbers2 = new Array(23, 43, 54, 65, 76, 87, 34, 5);
+// const fruit = ['Apple', 'Banana', 'Orange', 'Pear'];
+// const mixed = [22, 'Hello', true, undefined, null, { a: 1, b: 1 }, new Date()];
+
+// // console.log(mixed);
+// // console.table(mixed);
+
+// let val;
+
+// // // Get array length
+// // val = numbers.length;
+
+// // // check if is array
+// // val = Array.isArray(numbers);
+
+// // // get single value
+// // val = numbers[3];
+// // val = numbers[0];
+
+// // // insert into array
+// // numbers[2] = 100;
+
+// // // find index of value
+// // val = numbers.indexOf(4);
+
+// // // // MUTATING ARRAYS
+
+// // // // add on to end
+// // // numbers.push(250);
+
+// // // // add on to front
+// // // numbers.unshift(111);
+
+// // // // take of from the end
+// // // numbers.pop();
+
+// // // // take off of the front
+// // // numbers.shift();
+
+// // // //splice values
+// // // val = numbers.splice(2, 5);
+
+// // // // reverse
+// // // numbers.reverse();
+
+// // // concat
+// // numbers.concat(numbers2);
+
+// // sort with compare function
+
+// val = numbers.sort((x, y) => x - y);
+
+// function over50(num) {
+//   return num > 50;
+// }
+// // find
+// let numbersOver50 = [];
+
+// numbers.forEach((num) => {
+//   if (num > 50) {
+//     numbersOver50.push(num);
+//     console.log(`${num} greater than 50`);
+//   }
+// });
+// console.log(numbers);
+// console.log(val);
+// console.log(numbersOver50);
 
 /***
- * Arrays and Array Methods
+ *  OBJECT LITERALS
  */
 
-// Create arrays
-const numbers = [23, 4, 234, 23, 45, 6, 54, 65, 5];
-const numbers2 = new Array(23, 43, 54, 65, 76, 87, 34, 5);
-const fruit = ['Apple', 'Banana', 'Orange', 'Pear'];
-const mixed = [22, 'Hello', true, undefined, null, { a: 1, b: 1 }, new Date()];
+// const person = {
+//   first_name: 'Jared',
+//   last_name: 'Womack',
+//   age: 35,
+//   spouse: 'Whitney',
+//   hobbies: ['guitar', 'coding', 'sports'],
+//   address: {
+//     city: 'Spokane',
+//     state: 'Wa',
+//     street: 'Big Meadows',
+//   },
+//   get_birthYear: function () {
+//     return 2020 - this.age;
+//   },
+//   showHobbies() {
+//     this.hobbies.forEach((hobbie) => {
+//       console.log(hobbie);
+//     });
+//   },
+// };
 
-// console.log(mixed);
-// console.table(mixed);
+// let val;
 
-let val;
+// val = person;
+// val = person.last_name;
+// val = person['age'];
+// val = person.get_birthYear();
+// val = person.showHobbies();
 
-// // Get array length
-// val = numbers.length;
+// person.showHobbies();
 
-// // check if is array
-// val = Array.isArray(numbers);
+/***
+ *
+ * SWITCHES
+ */
 
-// // get single value
-// val = numbers[3];
-// val = numbers[0];
+// const color = 'red';
 
-// // insert into array
-// numbers[2] = 100;
+// switch (color) {
+//   case 'red':
+//     console.log('Color is red');
+//     break;
+//   case 'blue':
+//     console.log('Color is blue');
+//     break;
+//   default:
+//     console.log('Color is not red or blue');
+// }
 
-// // find index of value
-// val = numbers.indexOf(4);
+/***
+ *
+ * Function declarations and expressions
+ */
 
-// // // MUTATING ARRAYS
+// Function declarations
+// function greet() {
+//   console.log('hello');
+// }
+// greet();
 
-// // // add on to end
-// // numbers.push(250);
+// // function expressions
+// const square = function (x = 3) {
+//   return x * x;
+// };
 
-// // // add on to front
-// // numbers.unshift(111);
+// console.log(square());
 
-// // // take of from the end
-// // numbers.pop();
+// // IIFE immediately invokable function expressions
 
-// // // take off of the front
-// // numbers.shift();
+// // (function () {
+// //   console.log('IIfe ran');
+// // })();
 
-// // //splice values
-// // val = numbers.splice(2, 5);
+// (function (name) {
+//   console.log(`Hello ${name}`);
+// })('Jared');
 
-// // // reverse
-// // numbers.reverse();
+// // Property methods
 
-// // concat
-// numbers.concat(numbers2);
+// const todo = {
+//   add: function () {
+//     console.log('Add todo..');
+//   },
+//   edit: function (id) {
+//     console.log(`Edit todo ${id}`);
+//   },
+// };
 
-// sort with compare function
+// todo.delete = function () {
+//   console.log('Delete todo');
+// };
 
-val = numbers.sort((x, y) => x - y);
+// todo.add();
+// todo.edit(22);
+// todo.delete();
 
-function over50(num) {
-  return num > 50;
-}
-// find
-let numbersOver50 = [];
+/***
+ *
+ *
+ * GENERAL LOOPS
+ */
 
-numbers.forEach((num) => {
-  if (num > 50) {
-    numbersOver50.push(num);
-    console.log(`${num} greater than 50`);
-  }
-});
-console.log(numbers);
-console.log(val);
-console.log(numbersOver50);
+// for (let i = 0; i < 10; i++) {
+//   console.log(i);
+// }
+// let i = 0;
+// while (i <= 20) {
+//   console.log(i);
+//   i++;
+// }
+
+// let i = 0;
+
+// do {
+//   console.log('Number ' + i);
+//   i++;
+// } while (i < 10);
