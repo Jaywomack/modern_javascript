@@ -11,6 +11,8 @@ loadEventListeners();
 // load all the event listeners
 function loadEventListeners() {
   form.addEventListener('submit', addTask);
+  collection.addEventListener('click', deleteTask);
+  clearAllButton.addEventListener('click', clearTasks);
 }
 
 // add task
@@ -30,7 +32,7 @@ function addTask(e) {
     // add text content to span
     span.append(document.createTextNode('X'));
     // add classes to span
-    span.classList = 'badge badge-danger badge-pill p-2';
+    span.classList = 'badge badge-danger badge-pill p-2 delete-item';
     // append span to li
     li.appendChild(span);
     // append li to collection
@@ -38,4 +40,19 @@ function addTask(e) {
     // prevent default behavior
     e.preventDefault();
   }
+  taskInput.value = '';
+}
+
+// delete task
+function deleteTask(e) {
+  if (e.target.className === 'badge badge-danger badge-pill p-2 delete-item') {
+    if (confirm('Delete task?')) {
+      e.target.parentElement.remove();
+    }
+  }
+}
+
+// clear tasks
+function clearTasks(e) {
+  collection.innerHTML = '';
 }
