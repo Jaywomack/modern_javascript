@@ -10,9 +10,15 @@ const clearAllButton = document.querySelector('.clear-all');
 loadEventListeners();
 // load all the event listeners
 function loadEventListeners() {
+  app.addEventListener('DOMContentLoaded', getTasks);
   form.addEventListener('submit', addTask);
   collection.addEventListener('click', deleteTask);
   clearAllButton.addEventListener('click', clearTasks);
+}
+
+// get tasks from local storage
+function getTasks() {
+  let tasks;
 }
 
 // add task
@@ -37,10 +43,24 @@ function addTask(e) {
     li.appendChild(span);
     // append li to collection
     collection.appendChild(li);
+    // add tasks to local storage
+    storeTaskInLocalStorage(taskInput.value);
+    // Set input to ''
+    taskInput.value = '';
     // prevent default behavior
     e.preventDefault();
   }
-  taskInput.value = '';
+}
+// Store tasks in local storage
+function storeTaskInLocalStorage() {
+  let tasks;
+  if (localStorage.getItem('tasks') === null) {
+    tasks = [];
+  } else {
+    tasks = JSON.parse(localStorage.getItem('tasks'));
+  }
+  tasks.push(task);
+  localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
 // delete task
